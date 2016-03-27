@@ -1,6 +1,7 @@
+
 (function (){
 
-
+  var liArr = [];
   var itemsLeft = $('.incomplete-items');
   var listArticle = $('<article>');
 
@@ -29,6 +30,10 @@ $("form").submit(function(event) {
       itemList.append( newLi);
       itemsLeft.text(Number(itemsLeft.text()) + 1);
 
+// list items into an array
+
+      liArr.push(newTodo);
+      console.log(liArr);
 
 });
 
@@ -77,6 +82,7 @@ $('.clear').on('click', function() {
 });
 
 // footer buttons
+// Hi Jordan, I think these could be a function or done more concisely, played around with it and couldn't get working solution, but would love some feedback.
 
 $('.show-all').on('click', function(){
       $('article').closest('li').css('display', 'block');
